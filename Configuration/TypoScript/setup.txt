@@ -1,0 +1,95 @@
+/**
+ * Default setup for the ecomments plugin
+ */
+plugin.tx_ecomments {
+	settings {
+		libraries {
+			 jquery = {$plugin.tx_ecomments.settings.libraries.jquery}
+		}
+		verifyComments = {$plugin.tx_ecomments.settings.verifyComments}
+		sendNotifications = {$plugin.tx_ecomments.settings.sendNotifications}
+		notificationEmailTo = {$plugin.tx_ecomments.settings.notificationEmailTo}
+		notificationEmailFrom = {$plugin.tx_ecomments.settings.notificationEmailFrom}
+	}
+	view {
+		templateRootPath = {$plugin.tx_ecomments.view.templateRootPath}
+		partialRootPath = {$plugin.tx_ecomments.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_ecomments.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_ecomments.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		rewrittenPropertyMapper = 1
+	}
+}
+
+/**
+ * Include jQuery library
+ */
+[globalVar = LIT:1 = {$plugin.tx_ecomments.settings.libraries.jquery}]
+  page.includeJSFooterlibs.jquery = http://code.jquery.com/jquery-latest.min.js
+  //page.includeJSFooterlibs.jquery.disableCompression = 1
+[global]
+
+page.includeJSFooter {
+	file_1 = {$plugin.tx_ecomments.settings.javaScriptFile}
+}
+
+page.includeCSS {
+	file_1 = EXT:ecomments/Resources/Public/CSS/comments.css
+}
+
+tt_content.stdWrap.append < tt_content.list.20.ecomments_comment
+tt_content.stdWrap.append {
+	stdWrap.if.isTrue.field = tx_ecomments_enable_comments
+	settings {
+		tableName = tt_content
+		uid = TEXT
+		uid.field = uid
+	}
+}
+
+page.stdWrap.append < tt_content.stdWrap.append
+page.stdWrap.append.settings.tableName = pages
+page.stdWrap.append.settings.uid >
+page.stdWrap.append.settings.uid = TEXT
+page.stdWrap.append.settings.uid.data = page:uid
+
+/**
+ * Ajax request handler page
+ */
+enetEcommentsAjax = PAGE
+enetEcommentsAjax {
+	typeNum = 1344339440
+
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type: application/json; charset=UTF-8
+		xhtml_cleaning = 0
+		admPanel = 0
+		no_cache = 1
+	}
+
+	10 < tt_content.list.20.ecomments_comment
+	10 {
+		settings =< plugin.tx_ecomments.settings
+		persistence =< plugin.tx_ecomments.persistence
+		view =< plugin.tx_ecomments.view
+		switchableControllerActions {
+			Comment {
+				10 = createComment
+			}
+		}
+	}
+}
+config.tx_extbase.persistence.classes {
+	Enet\Ecomments\Domain\Model\Content.mapping {
+		columns {
+
+		}
+	}
+}
+
+

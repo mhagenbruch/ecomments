@@ -1,0 +1,26 @@
+{namespace mh=Enet\Ecomments\ViewHelpers}
+<div class="comment">
+	<div class="commentPic" style="float: left; margin-right: 10px;">
+		<mh:Gravatar email="{singleComment.email}" />
+	</div>
+	<ul class="commentFrom">
+		<span class="text-yellow">{singleComment.name}</span>
+		<span class="text-muted">
+			<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:saidOn" />
+		</span>
+		<span class="text-yellow"><f:format.date format="d.n.Y">{singleComment.crdate}</f:format.date></span>
+		<span class="text-muted">
+			<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:saidAt" />
+		</span>
+		<span class="text-yellow"><f:format.date format="H:i">{singleComment.crdate}</f:format.date></span>
+		<br />
+		<span class="shortString text-muted"><f:format.crop maxCharacters="50">{singleComment.content}</f:format.crop></span>
+		<span class="fullString text-muted" style="display:none;">{singleComment.content}</span>
+		<br />
+		<f:comment>If comment is longer than 50 chars the more button will displayed</f:comment>
+		<f:if condition="<mh:stringLength string='{singleComment.content}' /> > 50">
+			<button class="btn btn-success btn-xs arrow moreButton">More</button>
+		</f:if>
+	</ul>
+	<div class="clear"></div>
+</div>

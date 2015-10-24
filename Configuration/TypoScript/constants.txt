@@ -1,0 +1,32 @@
+/**
+ * Default constants for the ecomments plugin
+ */
+plugin.tx_ecomments {
+	settings {
+		#cat=plugin.tx_ecomments/general/1010; type=boolean; label=Enable notification emails
+		sendNotifications =
+		#cat=plugin.tx_ecomments/general/1020; type=string; label=Notification email to
+		notificationEmailTo = newcomment@ecomments.com
+		#cat=plugin.tx_ecomments/general/1030; type=string; label=Notification email from
+		notificationEmailFrom = newcomment@ecomments.com
+		javaScriptFile = EXT:ecomments/Resources/Public/JavaScript/Comments.js
+		#cat=plugin.tx_ecomments/general/1040; type=boolean; label=Enable verifying of comments
+		verifyComments =
+		libraries {
+			#cat=plugin.tx_ecomments/general/1050; type=boolean; label=Include jQuery
+			jquery =
+		}
+	}
+	view {
+		# cat=plugin.tx_ecomments/general/1060; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:ecomments/Resources/Private/Templates/
+		# cat=plugin.tx_ecomments/general/1070; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:ecomments/Resources/Private/Partials/
+		# cat=plugin.tx_ecomments/general/1080; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:ecomments/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_ecomments/general; type=string; label=Default storage PID
+		storagePid =
+	}
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2013-10-07" product-name="ecomments">
+		<header/>
+		<body>
+			<trans-unit id="tx_ecomments_domain_model_comment.name" approved="yes" xml:space="preserve">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_ecomments_domain_model_comment.email" approved="yes" xml:space="preserve">
+				<source>Email</source>
+				<target>Email</target>
+			</trans-unit>
+			<trans-unit id="tx_ecomments_domain_model_comment.content" approved="yes" xml:space="preserve">
+				<source>Content</source>
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="tab.comments" xml:space="preserve">
+				<source>Comments</source>		
+				<target>Kommentare</target>
+			</trans-unit>
+			<trans-unit id="tx_ecomments_enable_comments">
+				<source>Enable comments</source>
+				<target>Kommentare aktivieren</target>
+			</trans-unit>
+			<trans-unit id="tx_ecomments_enable_comments.description" xml:space="preserve">
+				<source>Enables comments below this record</source>		
+				<target>Aktiviert Kommentare unter diesem Datensatz</target>
+			</trans-unit>
+			<trans-unit id="tx_ecomments_enable_comments.tx_ecomments_limit" xml:space="preserve">
+				<source>Limit</source>
+				<target>Limit</target>
+			</trans-unit>
+			<trans-unit id="saidOn" xml:space="preserve">
+				<source>said on</source>
+				<target>sagte am</target>
+			</trans-unit>
+			<trans-unit id="saidAt" xml:space="preserve">
+				<source>at</source>
+				<target>um</target>
+			</trans-unit>
+			<trans-unit id="formfield_name" xml:space="preserve">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="formfield_email" xml:space="preserve">
+				<source>Email</source>
+				<target>Email</target>
+			</trans-unit>
+			<trans-unit id="formfield_content" xml:space="preserve">
+				<source>Comment</source>
+				<target>Kommentar</target>
+			</trans-unit>
+			<trans-unit id="formfield_create" xml:space="preserve">
+				<source>Post Comment</source>
+				<target>Absenden</target>
+			</trans-unit>
+			<trans-unit id="successMessage" xml:space="preserve">
+				<source>Your coment was successfully added!</source>
+				<target>Dein Kommentar wurde erfolgreich hinzugefügt.</target>
+			</trans-unit>
+			<trans-unit id="error_email" xml:space="preserve">
+				<source>This is not a valid email address</source>
+				<target>Das ist keine gültige Email Adresse</target>
+			</trans-unit>
+			<trans-unit id="error_name" xml:space="preserve">
+				<source>Please insert your name!</source>
+				<target>Bitte gib deinen Namen ein!</target>
+			</trans-unit>
+			<trans-unit id="error_content" xml:space="preserve">
+				<source>This comment is to short!</source>
+				<target>Dein Kommentar ist zu kurz!</target>
+			</trans-unit>
+			<trans-unit id="leave_comment_article" xml:space="preserve">
+				<source>Leave a Comment on this Article</source>
+				<target>Hinterlasse einen Kommentar an diesem Artikel</target>
+			</trans-unit>
+			<trans-unit id="leave_comment_page" xml:space="preserve">
+				<source>Leave a Comment on this site</source>
+				<target>Hinterlasse einen Kommentar an dieser Seite</target>
+			</trans-unit>
+			<trans-unit id="last_comments" xml:space="preserve">
+				<source>Last comments</source>
+				<target>Letzte Kommentare</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

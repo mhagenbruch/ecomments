@@ -1,0 +1,117 @@
+h3 {
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+input, textarea, button {
+	outline: none;
+	margin: 3px 0 3px 0;
+	font-size: 14px;
+}
+
+.nameError, .emailError, .contentError {
+	display: none;
+	color: #DF7160;
+	margin-bottom: 10px;
+}
+
+.alert {
+	color: #DF7160; 
+}
+
+.comment {
+	margin-bottom: 2%;
+}
+
+.commentForm {
+	padding: 1%;
+}
+
+.commentFrom {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.newCommentForm {
+	padding: 1%;
+}
+
+.tx-ecomments {
+	color: #000;
+	font-family: verdana;
+}
+
+.commentHeader {
+	float: left;
+	max-width: 170px;
+}
+
+.newComment {
+	float: left;
+}
+
+.commentList {
+	padding: 1%;
+}
+
+.commentListHeader {
+	padding: 1%;
+}
+
+.newComment input {
+	padding: 4px;
+	display: block;
+	width: 90%;
+}
+
+.newComment label {
+	display: block;
+	margin: 0;
+}
+
+.newComment form {
+	width: 100%;
+	padding: 0;
+}
+
+.newComment textarea {
+	width: 90%;
+}
+
+input.commentFormBotCheck {
+	display: none;
+}
+
+.sendButton, .moreButton {
+	background-color: #42A085;
+	border: none;
+	margin: 0;
+	padding: 5px;
+	color: #EBEFF0;
+	margin: 5px 0 5px 0;
+	cursor: pointer;
+}
+
+.required {
+	color: #B43C24;
+}
+
+.text-muted {
+	color: #000;
+	font-size: 11px;
+}
+
+.text-yellow {
+	color: #E9C704;
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+}
+
+.shortString, .fullString {
+	font-size: 15px;
+}

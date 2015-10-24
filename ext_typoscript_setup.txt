@@ -1,0 +1,33 @@
+/**
+ * Map creation Date in comment model
+ */
+config.tx_extbase.persistence.classes {
+	Enet\Ecomments\Domain\Model\Comment {
+		mapping {
+			columns {
+				crdate.mapOnProperty = crdate
+			}
+		}
+	}
+	Enet\Ecomments\Domain\Model\Content {
+		mapping {
+			tableName = tt_content
+			recordType =
+			columns {
+				pid.mapOnProperty = page
+			}
+		}
+	}
+	Enet\Ecomments\Domain\Model\Pages {
+		mapping {
+			tableName = pages
+			columns {
+				uid.mapOnProperty               = uid
+				pid.mapOnProperty               = pid
+				sorting.mapOnProperty           = sorting
+				title.mapOnProperty             = title
+				subtitle.mapOnProperty          = subtitle
+			}
+		}
+	}
+}

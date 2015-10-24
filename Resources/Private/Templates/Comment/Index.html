@@ -1,0 +1,103 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<!-- Comment list -->
+	<f:if condition="{commentList -> f:count()} > 0">
+		<div class="commentListHeader">
+			<h3>
+				<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:last_comments" />
+			</h3>
+		</div>
+	</f:if>
+
+	<!-- Comment list -->
+	<div class="commentList">
+		<f:for each="{commentList}" as="singleComment">
+			<f:render partial="Comment" arguments="{_all}" />
+		</f:for>
+	</div>
+
+	<!-- Ajax comment -->
+	<div class="commentPrototype" style="display:none;">
+		<f:render partial="Comment" arguments="{_all}" />
+	</div>
+
+	<!-- Comment form -->
+	<div class="newCommentForm">
+		<div class="commentHeader">
+			<h3>
+				<f:if condition="{0: table} == {0: 'tt_content'}">
+					<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:leave_comment_article" />
+				</f:if>
+				<f:if condition="{0: table} == {0: 'pages'}">
+					<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:leave_comment_page" />
+				</f:if>
+			</h3>
+		</div>
+
+		<div class="newComment">
+		<f:flashMessages class="alert alert-success"/>
+			<div class="alert alert-success commentFormSuccess" style="display:none;"></div>
+			<div class="alert alert-danger commentFormError" style="display:none;"></div>
+			<f:form class="commentForm" action="createComment" pageType="1344339440" format="json" noCacheHash="1" name="comment" controller="Comment" object="{comment}">
+				<f:form.hidden name="identifier" value="{identifier}" />
+				<f:form.hidden name="foreignUid" value="{uid}" />
+				<f:form.hidden name="foreignTable" value="{table}" />
+				<f:form.hidden name="validationHash" value="{validationHash}" />
+				<input type="hidden" class="timeStamp" name="time" value="" />
+
+				<input class="commentFormBotCheck" type="text" name="name" value="" />
+
+				
+					<label>
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:formfield_name" />
+						<span class="required">*</span>
+					</label>
+					<f:form.textfield property="name" class="form-control"/>
+					<div class="nameError alert alert-danger">
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:error_name" />
+					</div>
+					<div style="clear:both;"></div>
+				
+
+				<div class="form-group">
+					<label>
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:formfield_email" />
+						<span class="required">*</span>
+					</label>
+					<f:form.textfield property="email" class="form-control" />
+					<div class="emailError alert alert-danger">
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:error_email" />
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<div>
+					<label class="textareaLabel">
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:formfield_content" />
+						<span class="required">*</span>
+					</label>
+				</div>
+				<div>
+					<f:form.textarea property="content" class="form-control" cols="50" rows="7"/>
+					<div class="contentError alert alert-danger">
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:error_content" />
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<f:form.button class="sendButton">
+						<f:translate id="LLL:EXT:ecomments/Resources/Private/Language/locallang_db.xlf:formfield_create" />
+					</f:form.button>
+				</div>
+
+			</f:form>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	
+
+</f:section>

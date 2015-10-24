@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-07" product-name="ecomments">
+		<header/>
+		<body>
+			<trans-unit id="successMessage" xml:space="preserve">
+				<source>Your post was created!</source>
+			</trans-unit>
+			<trans-unit id="successMessageWithVerify" xml:space="preserve">
+				<source>Your post was created! After a short review your comment will be visible.</source>
+			</trans-unit>
+			<trans-unit id="submitNotAllowedErrorMessage" xml:space="preserve">
+				<source>Please wait before sending again.</source>
+			</trans-unit>
+			<trans-unit id="errorMessage" xml:space="preserve">
+				<source>Something went wrong! Check your inputs!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
