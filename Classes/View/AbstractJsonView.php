@@ -59,7 +59,7 @@ abstract class AbstractJsonView extends \TYPO3\CMS\Extbase\Mvc\View\AbstractView
 	 * @return void
 	 */
 	protected function sendResponse($content) {
-		$response = $this->objectManager->create('TYPO3\\CMS\\Extbase\\Mvc\\Web\\Response');
+		$response = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Mvc\\Web\\Response');
 		$response->setHeader('Content-Type', 'application/json; charset=utf-8');
 		$response->setContent(trim($content));
 		$response->sendHeaders();
